@@ -60,6 +60,17 @@ li {
     top: -32px;
 }
 
+.weather-temperature .units .celsium {
+    text-decoration: none;
+    color: black;
+    cursor: text;
+}
+
+.weather-temperature .units .celsium:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .weather-temperature .units .fahrenheit {
     text-decoration: none;
 }

@@ -44,9 +44,10 @@ function showWeather(response) {
   let humidity = document.querySelector('#humidity');
   let wind = document.querySelector('#wind');
   let icon = document.querySelector('#icon');
+  celsiumTemperature = response.data.main.temp; 
   h1.innerHTML = `${response.data.name}`;
   description.innerHTML = `${' ' + response.data.weather[0].description}`;
-  curTemp.innerHTML = `${Math.round(response.data.main.temp)}`;
+  curTemp.innerHTML = `${Math.round(celsiumTemperature)}`;
   pressure.innerHTML = `${Math.round(response.data.main.pressure)}`;
   humidity.innerHTML = `${Math.round(response.data.main.humidity)}`;
   wind.innerHTML = `${Math.round(response.data.wind.speed)}`;
@@ -87,16 +88,26 @@ function getCurrentLocation(event) {
 function showFahrengeitTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector('#temperature');
-  let fahrengeitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
-  alert("fahrengeitTemperature");
+  let fahrengeitTemperature = (celsiumTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrengeitTemperature);
 }
+
+function showCelsiumTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector('#temperature');
+  temperatureElement.innerHTML = Math.round(celsiumTemperature);
+}
+
+let celsiumTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let fahrengeitLink = document.querySelector("#fahrengeit-link");
 fahrengeitLink.addEventListener("click", showFahrengeitTemp);
+
+let celsiumLink = document.querySelector("#celsium-link");
+celsiumLink.addEventListener("click", showCelsiumTemp);
 
 //let currentLocationButton = document.querySelector(".current-location");
 //currentLocationButton.addEventListener("click", getCurrentLocation);
