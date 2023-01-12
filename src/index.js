@@ -43,12 +43,16 @@ function showWeather(response) {
   let pressure = document.querySelector('#pressure');
   let humidity = document.querySelector('#humidity');
   let wind = document.querySelector('#wind');
+  let icon = document.querySelector('#icon');
   h1.innerHTML = `${response.data.name}`;
   description.innerHTML = `${' ' + response.data.weather[0].description}`;
   curTemp.innerHTML = `${Math.round(response.data.main.temp)}`;
   pressure.innerHTML = `${Math.round(response.data.main.pressure)}`;
   humidity.innerHTML = `${Math.round(response.data.main.humidity)}`;
   wind.innerHTML = `${Math.round(response.data.wind.speed)}`;
+  icon.setAttribute("src", 
+  `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  icon.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
 function retrievePosition(position) {
