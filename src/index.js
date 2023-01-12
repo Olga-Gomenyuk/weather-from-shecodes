@@ -67,9 +67,27 @@ function retrievePosition(position) {
 
 navigator.geolocation.getCurrentPosition(retrievePosition);
 
-/*let apiKey = 'fbd35e7c668oa65a028e4a41408b3tcf';
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Lisbon&key=${apiKey}&units=metric`;
+function searchCity(city) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector(".form-control").value;
+  searchCity(city);
+}
 
-axios.get(url).then(displayTemperature);
-*/
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+let currentLocationButton = document.querySelector(".current-location");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
+searchCity("Kyiv");
