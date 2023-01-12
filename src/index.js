@@ -1,3 +1,41 @@
+//let now = new Date();
+//let dayToday = document.querySelector("#day");
+//let date = now.getDate();
+/*let month = 1 + now.getMonth();
+let year = now.getFullYear();*/
+//dayToday.innerHTML = `${date}.${month}.${year}`;
+
+let currentTime = new Date();
+let dateElement = document.querySelector("#day");
+dateElement.innerHTML = formatDate(currentTime);
+
+function formatDate(date) {
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let dayIndex = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let day = days[dayIndex];
+
+  return `${day}, ${hours}:${minutes}`;
+}
+
+
+
 function showWeather(response) {
   let h1 = document.querySelector("h1");
   let curTemp = document.querySelector('#temperature');
