@@ -84,10 +84,20 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function showFahrengeitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector('#temperature');
+  let fahrengeitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
+  alert("fahrengeitTemperature");
+  temperatureElement.innerHTML = Math.round(fahrengeitTemperature);
+}
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-let currentLocationButton = document.querySelector(".current-location");
-currentLocationButton.addEventListener("click", getCurrentLocation);
+let fahrengeitLink = document.querySelector("#fahrengeit-link");
+fahrengeitLink.addEventListener("click", showFahrengeitTemp);
 
-searchCity("Kyiv");
+//let currentLocationButton = document.querySelector(".current-location");
+//currentLocationButton.addEventListener("click", getCurrentLocation);
+
