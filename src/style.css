@@ -25,6 +25,10 @@ li {
     line-height: 20px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .weather-app-out {
     max-width: 600px;
     margin: 10px auto;
@@ -56,23 +60,28 @@ li {
 
 .weather-temperature .units {
     position: relative;
-    font-size: 14px;
-    top: -32px;
+    font-size: 16px;
+    top: -34px;
 }
 
-.weather-temperature .units .celsium {
-    text-decoration: none;
+.weather-temperature .celsium {
     color: black;
-    cursor: text;
+    cursor: default;
 }
 
-.weather-temperature .units .celsium:hover {
-    text-decoration: none;
-    cursor: pointer;
-}
 
-.weather-temperature .units .fahrenheit {
+
+
+
+/*.weather-temperature .units .fahrenheit {
     text-decoration: none;
+}
+.weather-temperature .celsium:hover {
+    text-decoration: none;
+    
+}
+.weather-temperature .fahrenheit:hover {
+   text-decoration: none;
 }
 
 .first-color { 

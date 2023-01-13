@@ -88,12 +88,16 @@ function getCurrentLocation(event) {
 function showFahrengeitTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector('#temperature');
+  celsiumLink.classList.remove('celsium');
+  fahrengeitLink.classList.add('celsium');
   let fahrengeitTemperature = (celsiumTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrengeitTemperature);
 }
 
 function showCelsiumTemp(event) {
   event.preventDefault();
+  celsiumLink.classList.add('celsium');
+  fahrengeitLink.classList.remove('celsium');
   let temperatureElement = document.querySelector('#temperature');
   temperatureElement.innerHTML = Math.round(celsiumTemperature);
 }
