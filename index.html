@@ -18,7 +18,13 @@
             <div class="weather-app">
                 <form action="search" id="search-form" >
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-3 current-location">
+                            <input 
+                                type="submit" 
+                                value="I'm here" 
+                                class="btn btn-success w-100">
+                        </div>
+                        <div class="col-6">
                             <input 
                                 type="search" 
                                 placeholder="type a city-name"
@@ -33,18 +39,25 @@
                     </div>
                 </form>
                 <div class="overview">
-                    <h1 id="city"></h1>
-                    <ul>
-                        <li>
-                            <span id="day"></span>  
-                        </li>
-                        <li >
-                            <span id = "month-year">ggg</span> 
-                        </li>
-                        <li id="description">
-                            
-                        </li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <h1 id="city"></h1>
+                        </div>
+                        <div class="col-6">
+                            <ul>
+                                <li>
+                                    <span id="day"></span>  
+                                </li>
+                                <li >
+                                    <span id = "month-year">ggg</span> 
+                                </li>
+                                <li id="description"><em>
+                                </em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="col-6">

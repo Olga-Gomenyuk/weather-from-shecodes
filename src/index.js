@@ -120,22 +120,7 @@ function handleSubmit(event) {
   let city = document.querySelector(".form-control").value;
   searchCity(city);
 }
-/*function retrievePosition(position) {
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let units = "metric";
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
-  
-  axios.get(url).then(showWeather);
-}*/
 
-//navigator.geolocation.getCurrentPosition(retrievePosition);
-
-/*function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}*/
 
 function showFahrengeitTemp(event) {
   event.preventDefault();
@@ -165,9 +150,22 @@ fahrengeitLink.addEventListener("click", showFahrengeitTemp);
 let celsiumLink = document.querySelector("#celsium-link");
 celsiumLink.addEventListener("click", showCelsiumTemp);
 
+function searchLocation(position) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let units = "metric";
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+  
+  axios.get(url).then(showWeather);
+}
 
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
 searchCity('Kyiv');
 
-//let currentLocationButton = document.querySelector(".current-location");
-//currentLocationButton.addEventListener("click", getCurrentLocation);
+let currentLocationButton = document.querySelector(".current-location");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
