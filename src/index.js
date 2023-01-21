@@ -1,11 +1,22 @@
-
-
-
 let currentTime = new Date();
 let dateElement = document.querySelector("#day");
 let currentMonthYear = document.querySelector("#month-year");
 dateElement.innerHTML = formatDate(currentTime);
 currentMonthYear.innerHTML = formatDayMonthYear(currentTime);
+
+document.body.style.background = changeBackground(currentTime);
+function changeBackground(date) {
+  let month = date.getMonth();
+  if (month == 0 || month == 1 || month == 11) {
+    document.body.style.background = 'url("../weather-from-shecodes/image/winter.jpg")';
+  } else if (month == 2 || month == 3 || month == 4) {
+    document.body.style.background = 'url("../weather-from-shecodes/image/spring.jpg")';
+  } else if (month == 5 || month == 6 || month == 7) {
+    document.body.style.background = 'url("../weather-from-shecodes/image/summer1.jpg")';
+  } else {
+    document.body.style.background = 'url("../weather-from-shecodes/image/fall1.jpg")';
+  }
+}
 
 function formatDate(date) {
   let hours = date.getHours();
