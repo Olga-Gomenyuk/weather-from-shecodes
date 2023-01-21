@@ -8,13 +8,13 @@ document.body.style.background = changeBackground(currentTime);
 function changeBackground(date) {
   let month = date.getMonth();
   if (month == 0 || month == 1 || month == 11) {
-    document.body.style.background = 'url("../weather-from-shecodes/src/image/winter.jpg")';
+    document.body.style.background = 'url("/weather-from-shecodes/src/image/winter.jpg")';
   } else if (month == 2 || month == 3 || month == 4) {
-    document.body.style.background = 'url("../weather-from-shecodes/src/image/spring.jpg")';
+    document.body.style.background = 'url("/weather-from-shecodes/src/image/spring.jpg")';
   } else if (month == 5 || month == 6 || month == 7) {
-    document.body.style.background = 'url("../weather-from-shecodes/src/image/summer1.jpg")';
+    document.body.style.background = 'url("/weather-from-shecodes/src/image/summer1.jpg")';
   } else {
-    document.body.style.background = 'url("../weather-from-shecodes/src/image/Fall1.jpg")';
+    document.body.style.background = 'url("/weather-from-shecodes/src/image/Fall1.jpg")';
   }
 }
 
@@ -45,16 +45,26 @@ function formatDate(date) {
 
 function formatDayMonthYear(date) {
   let dayOfMonth = date.getDate();
-  let month = 1 + date.getMonth();
+  let monthes = ['January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'Augest',
+  'September',
+  'October',
+  'November',
+  'Desember'];
+  let monthIndex = date.getMonth();
+  let month = monthes[monthIndex];
   let year = date.getFullYear();
-  if (month < 10) {
-    month = `0${month}`;
-  }
-
+  
   if (dayOfMonth < 10) {
     dayOfMonth = `0${dayOfMonth}`;
   }
-  return `${dayOfMonth}.${month}.${year}`
+  return `${dayOfMonth} ${month} ${year}`
 }
 
 function formatDay(timestamp) {

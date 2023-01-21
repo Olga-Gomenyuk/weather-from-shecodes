@@ -1,24 +1,19 @@
                 
 let now = new Date();
-let monthes = {
-  0: 'January',
-  1: 'February',
-  2: 'March',
-  3: 'April',
-  4: 'May',
-  5: 'June',
-  6: 'July',
-  7: 'Augest',
-  8: 'September',
-  9: 'October',
-  10: 'November',
-  11: 'Desember'
-};
+let monthes = ['January',
+'February',
+'March',
+'April',
+'May',
+'June',
+'July',
+'Augest',
+'September',
+'October',
+'November',
+'Desember'];
 
-let month = '';
-for(let prop in monthes) {
-  if(now.getMonth() === prop) {
-    return month = monthes.prop
-  }
-}
+let monthIndex = now.getMonth();
+let month = monthes[monthIndex];
+
 console.log(month);
