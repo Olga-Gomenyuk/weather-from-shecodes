@@ -14,7 +14,7 @@ function changeBackground(date) {
   } else if (month == 5 || month == 6 || month == 7) {
     document.body.style.background = 'url("../weather-from-shecodes/image/summer1.jpg")';
   } else {
-    document.body.style.background = 'url("../weather-from-shecodes/image/fall1.jpg")';
+    document.body.style.background = 'url("../weather-from-shecodes/image/Fall1.jpg")';
   }
 }
 
