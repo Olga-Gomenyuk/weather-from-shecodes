@@ -1,13 +1,11 @@
-//let now = new Date();
-//let dayToday = document.querySelector("#day");
-//let date = now.getDate();
-/*let month = 1 + now.getMonth();
-let year = now.getFullYear();*/
-//dayToday.innerHTML = `${date}.${month}.${year}`;
+
+
 
 let currentTime = new Date();
 let dateElement = document.querySelector("#day");
+let currentMonthYear = document.querySelector("#month-year");
 dateElement.innerHTML = formatDate(currentTime);
+currentMonthYear.innerHTML = formatDayMonthYear(currentTime);
 
 function formatDate(date) {
   let hours = date.getHours();
@@ -32,6 +30,20 @@ function formatDate(date) {
   let day = days[dayIndex];
 
   return `${day}, ${hours}:${minutes}`;
+}
+
+function formatDayMonthYear(date) {
+  let dayOfMonth = date.getDate();
+  let month = 1 + date.getMonth();
+  let year = date.getFullYear();
+  if (month < 10) {
+    month = `0${month}`;
+  }
+
+  if (dayOfMonth < 10) {
+    dayOfMonth = `0${dayOfMonth}`;
+  }
+  return `${dayOfMonth}.${month}.${year}`
 }
 
 function formatDay(timestamp) {
