@@ -8,13 +8,13 @@ document.body.style.background = changeBackground(currentTime);
 function changeBackground(date) {
   let month = date.getMonth();
   if (month == 0 || month == 1 || month == 11) {
-    document.body.style.background = 'url("../weather-from-shecodes/image/winter.jpg")';
+    document.body.style.background = 'url("../weather-from-shecodes/src/image/winter.jpg")';
   } else if (month == 2 || month == 3 || month == 4) {
-    document.body.style.background = 'url("../weather-from-shecodes/image/spring.jpg")';
+    document.body.style.background = 'url("../weather-from-shecodes/src/image/spring.jpg")';
   } else if (month == 5 || month == 6 || month == 7) {
-    document.body.style.background = 'url("../weather-from-shecodes/image/summer1.jpg")';
+    document.body.style.background = 'url("../weather-from-shecodes/src/image/summer1.jpg")';
   } else {
-    document.body.style.background = 'url("../weather-from-shecodes/image/Fall1.jpg")';
+    document.body.style.background = 'url("../weather-from-shecodes/src/image/Fall1.jpg")';
   }
 }
 
